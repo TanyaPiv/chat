@@ -1,0 +1,47 @@
+.chatArea {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: calc( 100vh - 125px);
+    overflow-y: scroll;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    top: 30px;
+}
+
+.message {
+    font-size: .9em;
+    width: auto;
+    max-width: 250px;
+    border: 1px solid;
+    padding: 10px;
+    display: block;
+    margin: 10px 0;
+}
+
+.messageSender {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+
+    button {
+        background-color: #00a884;
+        width: 20%;
+        height: 60px;
+        color: white;
+        border: none;
+    }
+}
+
+.pageContainer {
+    text-align: center;
+    margin-top: 60px;
+    height: calc( 100vh - 60px);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
