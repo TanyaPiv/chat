@@ -1,16 +1,16 @@
 import { TextField } from '@mui/material';
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC, useContext } from 'react';
 import styled from '../Auth.module.scss';
 import { Button, Typography } from '@material-ui/core';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { MyPhoneContext } from '../App';
+import { phoneMask } from '../utils/phoneMask';
 
 
 export type FormData = {
   phone: ""
 }
-
 
 const CreateChat: FC = () => {
   const { phone, handlePhoneChange } = useContext(MyPhoneContext);
@@ -23,8 +23,9 @@ const CreateChat: FC = () => {
   const navigate = useNavigate();
 
   const getPhone = (data:any) => {
-    handlePhoneChange(data.phone);
-    navigate(`/chat/${data.phone}`);
+    const newPhone = phoneMask(data.phone)
+    handlePhoneChange(newPhone);
+    navigate(`/chat/${newPhone}`);
   };
 
   return (
@@ -33,7 +34,11 @@ const CreateChat: FC = () => {
         <Typography variant="h4" align="center">
           Введите номер телефона
         </Typography>
-          <TextField {...register("phone")} fullWidth label="phone"/>
+        <TextField
+          id="formatted-text-mask-input"
+          {...register("phone")}
+          fullWidth
+        />
         <Button
           type="submit"
         >

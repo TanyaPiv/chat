@@ -56,7 +56,7 @@ const ChatPage = () => {
       setReceiptId(result.receiptId);
       const typeWebhook = result.body.typeWebhook;
   
-      if(result.body.senderData.chatId.replace("@c.us", "") === newPhone && typeWebhook === "outgoingMessageReceived" && result.body.messageData.textMessageData?.textMessage) {
+      if(result.body.senderData?.chatId.replace("@c.us", "") === newPhone && typeWebhook === "outgoingMessageReceived" && result.body.messageData.textMessageData?.textMessage) {
         setMessages((prevState) => prevState.concat({
           text: result.body.messageData.textMessageData?.textMessage,
           type: "get"
