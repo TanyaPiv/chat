@@ -13,7 +13,7 @@ export type FormData = {
 }
 
 const CreateChat: FC = () => {
-  const { phone, handlePhoneChange } = useContext(MyPhoneContext);
+  const { handlePhoneChange } = useContext(MyPhoneContext);
 
   const { register, handleSubmit } = useForm<FormData>({
     defaultValues: {

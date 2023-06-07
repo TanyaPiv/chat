@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styled from './Chat.module.scss';
 import { IMessages } from './Chat';
-import { Box } from '@material-ui/core';
 
 const Message:FC<IMessages> = ({text, type}) => {
 
