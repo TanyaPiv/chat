@@ -82,7 +82,6 @@ const ChatPage = () => {
       fn()
     }
 
-    console.log(messages, 'messages');
   }, [receiptId])
 
   useEffect(() => {
